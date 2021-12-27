@@ -18,6 +18,13 @@ def leaScores():
     pointsLea = pointsLea + 1
     affichageScores()
 
+def resetScore():
+    global pointsLea
+    global pointsCorentin
+    pointsCorentin = 0
+    pointsLea = 0
+    affichageScores()
+
 # Fonction permettant l'actualisation des scores
 def affichageScores():
     scoreLea = QLabel(str(pointsLea))
@@ -51,6 +58,7 @@ grid = QGridLayout()
 ### Widgets
 
 # Score buttons
+# Increase score buttons
 buttonCorentin = QPushButton("+1")
 buttonCorentin.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
 buttonCorentin.clicked.connect(corentinScores)
@@ -80,6 +88,22 @@ buttonLea.setStyleSheet(
 "font-size: 30px;}"
 )
 grid.addWidget(buttonLea, 4, 0)
+
+# Reset score button
+buttonReset = QPushButton("Reset")
+buttonReset.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
+buttonReset.clicked.connect(resetScore)
+buttonReset.setStyleSheet(
+"*{border: 2px solid '#FFFFFF';"+
+"border-radius:5px;"+
+"font-size: 16px;"+
+"margin: 20px 25px;"+
+"background-color: '#161219';"+
+"color: 'white'}"+
+"*:hover{background: '#3c2c48';"+
+"font-size: 16px;}"
+)
+grid.addWidget(buttonReset, 0, 2)
 
 # Display our pictures and add names
 avatarCorentin = QPixmap("co.png")
