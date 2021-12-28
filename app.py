@@ -152,13 +152,13 @@ buttonCorentin = QPushButton("+1")
 buttonCorentin.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
 buttonCorentin.clicked.connect(corentinScores)
 buttonCorentin.setStyleSheet(
-"*{border: 4px solid '#FFFFFF';"+
+"*{border: 2px solid '#FFFFFF';"+
 "border-radius:15px;"+
 "font-size: 27px;"+
 "margin: 20px 25px;"+
-"background-color: '#9b37e6';"+
+"background-color: '#3c2c48';"+
 "color: 'white'}"+
-"*:hover{background: '#3c2c48';"+
+"*:hover{background: '#9b37e6';"+
 "font-size: 30px;}"
 )
 grid.addWidget(buttonCorentin, 4, 2)
@@ -167,13 +167,13 @@ buttonLea = QPushButton("+1")
 buttonLea.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
 buttonLea.clicked.connect(leaScores)
 buttonLea.setStyleSheet(
-"*{border: 4px solid '#FFFFFF';"+
+"*{border: 2px solid '#FFFFFF';"+
 "border-radius:15px;"+
 "font-size: 27px;"+
 "margin: 20px 25px;"+
-"background-color: '#9b37e6';"+
+"background-color: '#3c2c48';"+
 "color: 'white'}"+
-"*:hover{background: '#3c2c48';"+
+"*:hover{background: '#9b37e6';"+
 "font-size: 30px;}"
 )
 grid.addWidget(buttonLea, 4, 0)
