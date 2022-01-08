@@ -29,22 +29,21 @@ def checkDb():
     con.close()
 checkDb()
 
-# Fuctions to connect to db to update victory total
-def corentinWins():
+def updateDb(query):
     con = sqlite3.connect("points.db")
     cur = con.cursor()
-    cur.execute("update points set victoires=victoires+1 where joueur='Corentin'")
+    cur.execute(query)
     con.commit()
     checkDb()
     con.close()
 
+# Fuctions to connect to db to update victory total
+def corentinWins():
+    updateDb("update points set victoires=victoires+1 where joueur='Corentin'")
+
+
 def leaWins():
-    con = sqlite3.connect("points.db")
-    cur = con.cursor()
-    cur.execute("update points set victoires=victoires+1 where joueur='Lea'")
-    con.commit()
-    checkDb()
-    con.close()
+    updateDb("update points set victoires=victoires+1 where joueur='Lea'")
 
 # Finish game function, increasing by 1 the number of victories of the player with the most points and starts the function that'll edit the database
 def gameFinished():
